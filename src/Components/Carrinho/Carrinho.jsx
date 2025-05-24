@@ -5,9 +5,9 @@ import { useNavigate } from 'react-router-dom'
 
 const Carrinho = () => {
     return (
-        <div>
+        <div className='carrinho-container'>
             <Navbar />
-            <div className='container'>
+            <div className='container-carrinho'>
                 <h1>Carrinho</h1>
                 <p>Adicione produtos ao carrinho e finalize sua compra.</p>
                 <div className='carrinho'>
