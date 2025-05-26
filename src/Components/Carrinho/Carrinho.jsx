@@ -5,15 +5,11 @@ import { useNavigate } from 'react-router-dom'
 
 const Carrinho = () => {
     return (
-<<<<<<< HEAD
         <div className="carrinho-container bg-light min-vh-100">
             <Navbar />
             <div className="container py-4">
                 <h2 className="mb-3 fw-bold">🛒 Meu Carrinho</h2>
-                <p className="texto-resumo">
-                    Revise seus produtos antes de finalizar a compra.
-                </p>
-
+                <p className="text-muted mb-4">Revise seus produtos antes de finalizar a compra.</p>
 
                 {[1, 2].map((_, i) => (
                     <div className="card shadow-sm mb-4 border-0 rounded-4" key={i}>
@@ -30,10 +26,7 @@ const Carrinho = () => {
                                 <div className="card-body d-flex flex-column justify-content-between h-100">
                                     <div>
                                         <h5 className="card-title fw-semibold">Nome do Produto</h5>
-                                        <p className="card-text descricao-produto mb-1">
-                                            Descrição resumida do produto aqui.
-                                        </p>
-
+                                        <p className="card-text text-muted mb-1">Descrição resumida do produto aqui.</p>
                                     </div>
                                     <div className="d-flex justify-content-between align-items-end mt-3">
                                         <span className="fw-bold fs-6">R$ 100,00</span>
@@ -42,27 +35,6 @@ const Carrinho = () => {
                                 </div>
                             </div>
                         </div>
-=======
-        <div className='carrinho-container'>
-            <Navbar />
-            <div className='container-carrinho'>
-                <h1>Carrinho</h1>
-                <p>Adicione produtos ao carrinho e finalize sua compra.</p>
-                <div className='carrinho'>
-                    <div className='carrinho-produto'>
-                        <img src="src\assets\produto1.jpg" alt="Produto" />
-                        <h2>Nome do Produto</h2>
-                        <p>Descrição do produto</p>
-                        <p>Preço: R$ 100,00</p>
-                        <button>Remover do Carrinho</button>
-                    </div>
-                    <div className='carrinho-produto'>
-                        <img src="src\assets\produto1.jpg" alt="Produto" />
-                        <h2>Nome do Produto</h2>
-                        <p>Descrição do produto</p>
-                        <p>Preço: R$ 100,00</p>
-                        <button>Remover do Carrinho</button>
->>>>>>> 05944d077b776950f7611cf41ffdab3a5010539e
                     </div>
                 ))}
 
