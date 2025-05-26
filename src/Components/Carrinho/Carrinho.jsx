@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 
 const Carrinho = () => {
     return (
+<<<<<<< HEAD
         <div className="carrinho-container bg-light min-vh-100">
             <Navbar />
             <div className="container py-4">
@@ -41,6 +42,27 @@ const Carrinho = () => {
                                 </div>
                             </div>
                         </div>
+=======
+        <div className='carrinho-container'>
+            <Navbar />
+            <div className='container-carrinho'>
+                <h1>Carrinho</h1>
+                <p>Adicione produtos ao carrinho e finalize sua compra.</p>
+                <div className='carrinho'>
+                    <div className='carrinho-produto'>
+                        <img src="src\assets\produto1.jpg" alt="Produto" />
+                        <h2>Nome do Produto</h2>
+                        <p>Descrição do produto</p>
+                        <p>Preço: R$ 100,00</p>
+                        <button>Remover do Carrinho</button>
+                    </div>
+                    <div className='carrinho-produto'>
+                        <img src="src\assets\produto1.jpg" alt="Produto" />
+                        <h2>Nome do Produto</h2>
+                        <p>Descrição do produto</p>
+                        <p>Preço: R$ 100,00</p>
+                        <button>Remover do Carrinho</button>
+>>>>>>> 05944d077b776950f7611cf41ffdab3a5010539e
                     </div>
                 ))}
 
