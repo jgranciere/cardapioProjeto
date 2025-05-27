@@ -24,8 +24,13 @@
   object-fit: cover;
 }
 
+.info-produto p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .info-produto {
-  padding: 8px;
+  background-color: antiquewhite;
   color: #000;
   font-size: 0.9rem;
 }

@@ -2,12 +2,13 @@
     width: 100%;
     background-color: rgb(255, 227, 227);
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     padding: 10px;
     align-items: center;
     position: fixed;
     bottom: 0;
     z-index: 1000;
+    height: 50px;
     
 }
 
@@ -20,20 +21,22 @@
 
 .icone {
     font-size: 20px;
-    color: rgba(255, 166, 0, 0.603);
+    color: rgba(20, 20, 20, 0.603);
 }
 
 .inicio:hover, .carrinho:hover{
     cursor: pointer;
 }
 
-p {
+.carrinho p, .inicio p {
     font-size: 10px;
+    font-weight: bold;
+    margin: 0;
 }
 
 
 @media (max-width: 1024px) {
     .nav-bar{
-        justify-content: space-between;
+        justify-content: space-around;
     }
 }

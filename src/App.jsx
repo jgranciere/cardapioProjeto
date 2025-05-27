@@ -4,22 +4,25 @@ import Telaprincipal from './Components/TelaPrincipal/Telaprincipal'
 import ProductDetails from './Components/pages/ProductDetails'
 import Carrinho from './Components/Carrinho/Carrinho'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { ProdutosProvider } from './context/ProdutosContext'
 
 const App = () => {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={
-          <>
-            <Navbar />
-            <Telaprincipal />
-          </>
-        } />
+      <ProdutosProvider>
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Navbar />
+              <Telaprincipal />
+            </>
+          } />
 
-        <Route path="/produto/:id" element={<ProductDetails />} />
-        <Route path="/carrinho" element={<Carrinho />} />
-
-      </Routes>
+          <Route path="/produto/:id" element={<ProductDetails />} />
+          <Route path="/bebida/:id" element={<ProductDetails />} />
+          <Route path="/carrinho" element={<Carrinho />} />
+        </Routes>
+      </ProdutosProvider>
     </Router>
   )
 }
