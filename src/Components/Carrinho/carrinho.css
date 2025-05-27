@@ -1,0 +1,15 @@
+.carrinho-container {
+    background-color: #f8f9fa;
+}
+
+.card-title {
+    font-size: 1.1rem;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+img.object-fit-cover {
+    object-fit: cover;
+}

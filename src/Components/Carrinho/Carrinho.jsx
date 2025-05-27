@@ -9,9 +9,13 @@ const Carrinho = () => {
             <Navbar />
             <div className="container py-4">
                 <h2 className="mb-3 fw-bold">🛒 Meu Carrinho</h2>
+<<<<<<< HEAD
                 <p className="texto-resumo">
                     Revise seus produtos antes de finalizar a compra.
                 </p>
+=======
+                <p className="text-muted mb-4">Revise seus produtos antes de finalizar a compra.</p>
+>>>>>>> 5d7431556b51fbe85a817b6d82f2240bb7894c07
 
                 {[1, 2].map((_, i) => (
                     <div className="card shadow-sm mb-4 border-0 rounded-4" key={i}>
@@ -28,10 +32,7 @@ const Carrinho = () => {
                                 <div className="card-body d-flex flex-column justify-content-between h-100">
                                     <div>
                                         <h5 className="card-title fw-semibold">Nome do Produto</h5>
-                                        <p className="card-text descricao-produto mb-1">
-                                            Descrição resumida do produto aqui.
-                                        </p>
-
+                                        <p className="card-text text-muted mb-1">Descrição resumida do produto aqui.</p>
                                     </div>
                                     <div className="d-flex justify-content-between align-items-end mt-3">
                                         <span className="fw-bold fs-6">R$ 100,00</span>
