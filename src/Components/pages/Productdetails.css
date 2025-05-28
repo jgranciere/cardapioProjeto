@@ -1,172 +1,112 @@
 .produto-detail-container{
-    width: 80%;
+    width: 100%;
     height: 100vh;
     display: flex;
-    background-color: rgba(255, 255, 255, 0.527);
     flex-direction: column;
-}
-
-.bar-header{
-    width: 100%;
-    height: 50px;
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    border-bottom: 1px solid #000;
 }
 
-.details-product {
+.produto-detail-header{
     width: 100%;
-    height: 410px;
-    display: flex;
-    flex-direction: row;
-    margin-top: 20px;
+    flex: 1;
+    flex-direction: column;
+    overflow-y: auto;
 }
 
-.detail-product-infos img{
+/* IMAGEM*/
+
+.produto-detail-img .icone {
+    display: flex;
+    position: fixed;
+    color: #fff;
+    padding: 10px;
+    font-size: 25px;
+}
+
+.produto-detail-img{
+    width: 100%;
+    height: 250px;
+    background-color: beige;
+}
+
+.produto-detail-img img{
     width: 100%;
     height: 100%;
-    border-radius: 20px;
     object-fit: cover;
 }
 
-.img-container {
-  width: 20%;
-  height: 100%;
-}
 
-.detail-product-infos{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-}
-
-.detail-product-infos-texts{
-    width: 100%;
-    margin-left: 20px;
-}
-
-.detail-product-infos-texts span {
-    color: #000000b2;
-    font-size: 20px;
-}
-
-.detail-product-infos-texts p {
-    color: #00000091;
-    font-size: 15px;
-}
-
-.detail-product-infos-texts h1, span, p {
-    margin-bottom: 10px;
-    margin-top: 10px;
-}
-
-.more-products{
-    width: 100%;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    background-color: #77777741;
-    margin-top: 10px;
+/* INFOS*/
+.produto-detail-info{
+    flex: 1;
     
-}
-.more-products h1{
-    margin-left: 20px;
-    font-size: 20px;
-    margin-bottom: 0;
-}
-
-.list-products{
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
     padding: 10px;
 }
 
-.produto-recomendado{
-    display: flex;
-    flex-direction: row-reverse;
-    width: 100%;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    margin-top: 20px;
+.produto-detail-info h1, p{
+    margin: 0;
+    padding: 0px;
 }
 
-.produto-recomendado img{
-    width: 100px;
+
+/*MORE PRODUTOS */
+
+.produto-more-separete{
+    width: 100%;
+    background-color: #c4c4c4;
+    padding: 10px;
+}
+
+.produto-separate p {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* LIST PRODUTOS */
+
+.produto-more-list-details{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-bottom: 100px;
+}
+
+.produto-more-list-cards{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.produto-recomended-card{
+    width: 100%;
     height: 100px;
-    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #0000002f;
+    padding: 10px;   
+    justify-content: space-between;
+}
+
+.produto-recomended-card img{
+    width: 90px;
+    height: 90px;
     object-fit: cover;
 }
 
-
+.produto-recomended-name p{
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0;
+}
 
 
 @media (max-width: 1024px) {
-    .produto-detail-container{
+    .produto-detail-header{
         width: 100%;
-    }
-
-    .bar-header{
-        border-bottom: 0px solid #000;
-        position: fixed;
-    }
-
-    .img-container {
-        width: 100%;
-        height: 100%;
-    }
-
-    .detail-product-infos img{
-        width: 100%;
-        height: 100%;
-        border-radius: 0px;
-        object-fit: cover;
-    }
-
-    .details-product {
-        width: 100%;
-        height: 480px;
-        display: flex;
+        flex: 1;
         flex-direction: column;
-        margin-top: 0;
-    }
-
-    .detail-product-infos, img{
-        width: 100%;
-        height: 300px;
-        border-radius: 0px;
-    }
-
-    .detail-product-infos{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        
-    }
-
-    .detail-product-infos-texts{
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        margin-left: 0px;
-    }
-
-    .detail-product-infos-texts-names{
-        margin-left: 20px;
-        
-    }
-
-    .icon-back{
-        color: #fff;
-    }
-
-    .more-products{
-        width: 100%;
-        
     }
 }

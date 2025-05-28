@@ -20,7 +20,14 @@
     border-radius: 50%;
 }
 
+.buttons-options{
+    display: flex;
+    flex-direction: row;
+}
+
 .buttons-options button{
+    width: 40px;
+    height: 40px;
     position: relative;
     padding: 10px 12px;
     border-radius: 50%;
@@ -28,6 +35,9 @@
     margin-left: 10px;
     cursor: pointer;
     font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (max-width: 1024px) {

@@ -9,13 +9,9 @@ const Carrinho = () => {
             <Navbar />
             <div className="container py-4">
                 <h2 className="mb-3 fw-bold">🛒 Meu Carrinho</h2>
-<<<<<<< HEAD
                 <p className="texto-resumo">
                     Revise seus produtos antes de finalizar a compra.
                 </p>
-=======
-                <p className="text-muted mb-4">Revise seus produtos antes de finalizar a compra.</p>
->>>>>>> 5d7431556b51fbe85a817b6d82f2240bb7894c07
 
                 {[1, 2].map((_, i) => (
                     <div className="card shadow-sm mb-4 border-0 rounded-4" key={i}>

@@ -27,41 +27,40 @@ const ProductDetails = () => {
 
   return (
     <div className='produto-detail-container'>
-        <div className='bar-header'>
-            <FontAwesomeIcon icon={faArrowLeft} size= '2x' className='icon-back' onClick={() => navigate("/")}/>
-        </div>
+        <div className='produto-detail-header'>
+            <div className='produto-detail-img'>
+                <FontAwesomeIcon icon={faArrowLeft} className='icone' onClick={() => navigate ("/")}/>
+                <img src={produtoSelecionado.imagemUrl} alt={`Imagem do ${produtoSelecionado.nome}`} />
+            </div>
 
-        <div className='details-product'>
-            <div className='detail-product-infos'>
-                <div className='img-container'>
-                    <img src={produtoSelecionado.imagemUrl} alt={`Imagem do ${produtoSelecionado.nome}`} />
+            <div className='produto-detail-info'>
+                <h1>{produtoSelecionado.nome}</h1>
+                <p>{produtoSelecionado.descricao}</p>
+                <span>R$ {produtoSelecionado.preco}</span>
+            </div>
+
+            <div className='produto-more-separete'>
+                <div className='produto-separate'>
+                    <p>Escolha mais itens !</p>
                 </div>
-                <div className='detail-product-infos-texts'>
-                    <div className='detail-product-infos-texts-names'>
-                        <h1>{produtoSelecionado.nome}</h1>
-                        <span>R$ {produtoSelecionado.preco}</span>
-                        <p>{produtoSelecionado.descricao}</p>
-                    </div>
+            </div>
+
+            <div className='produto-more-list-details'>
+                <div className='produto-more-list-cards'>
+                    {produtosRecomendados.map(produto => (
+                        <div key={produto.id} className='produto-recomended-card'>
+                            <div className='produto-recomended-name'>
+                                <p>{produto.nome}</p>
+                                <p>R$ {produto.preco}</p>
+                            </div>
+                            
+                            <img src={produto.imagemUrl} alt={`Imagem do ${produto.nome}`} />
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
-
-        <div className='more-products'>
-            <h1>Escolha mais itens</h1>
-        </div>
-        <div className='list-products'>
-            {produtosRecomendados.map(produto => (
-                <div key={produto.id} className="produto-recomendado">
-                    <img src={produto.imagemUrl} alt={produto.nome} />
-                    <p>{produto.nome}</p>
-                    
-                </div>
-            ))}
-        </div>
-
-
         <BarraInferior/>
-
     </div>
   )
 }
