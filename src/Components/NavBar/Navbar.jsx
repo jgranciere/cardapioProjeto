@@ -10,8 +10,8 @@ const Navbar = () => {
         <a href="/" className='logo'><img src={logo} alt="" /></a>
 
         <nav className='buttons-options'>
-            <button><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
-            <button><FontAwesomeIcon icon={faShareNodes} /></button>
+            <button><FontAwesomeIcon icon={faMagnifyingGlass} className='icon-search' /></button>
+            <button><FontAwesomeIcon icon={faShareNodes} className='icon-share' /></button>
         </nav>
     </header>
   )

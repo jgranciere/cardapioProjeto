@@ -16,10 +16,22 @@
 
 /* IMAGEM*/
 
+.icone.visible {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.icone.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+
 .produto-detail-img .icone {
     display: flex;
     position: fixed;
-    color: #fff;
+    color: #ffffff;
     padding: 10px;
     font-size: 25px;
 }

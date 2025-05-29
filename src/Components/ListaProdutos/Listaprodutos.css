@@ -20,7 +20,7 @@
 
 .container-produtos h1{
     font-size: 25px;
-    font-weight: 800;
+    font-weight: 500;
     margin: 0;
     color: black;
 }
@@ -51,20 +51,21 @@
 
 .infos-produtos p{
     font-size: 12px;
+    color: rgba(0, 0, 0, 0.637);
 }
 
 .infos-produtos h2{
-    font-size: 20px;
-    font-weight: 800;
+    font-size: 15px;
+    font-weight: 700;
 }
 
 .infos-produtos span{
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 600;
 }
 
 .infos-produtos img{
-    width: 110px;
+    width: 90px;
     height: 90px;
     object-fit: cover;
     border-radius: 10px;

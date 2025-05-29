@@ -25,6 +25,10 @@
     flex-direction: row;
 }
 
+.buttons-options, .icon-search, .icon-share{
+    color: #000000;
+}
+
 .buttons-options button{
     width: 40px;
     height: 40px;

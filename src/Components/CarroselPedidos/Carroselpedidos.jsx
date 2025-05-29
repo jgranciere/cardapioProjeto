@@ -1,18 +1,14 @@
-import React from 'react';
+import React, { use } from 'react';
 import './Carroselpedidos.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-
-import img1 from '../../assets/produto1.jpg';
-import img2 from '../../assets/produto2.jpg';
-import img3 from '../../assets/produto3.jpg';
-import img4 from '../../assets/produto4.jpg';
-import img5 from '../../assets/produto5.jpg';
+import { useContext } from 'react';
+import { ProdutosContext } from '../../context/ProdutosContext';
 
 const Carroselpedidos = () => {
-  const produtos = [img1, img2, img3, img4, img5];
+  const { produtos } = useContext(ProdutosContext);
 
   return (
     <section className="carrosel-container">
@@ -22,7 +18,7 @@ const Carroselpedidos = () => {
         spaceBetween={16}
         slidesPerView={2}
         pagination={{ clickable: true }}
-        autoplay={{ delay: 5000 }}
+        autoplay={{ delay: 35000 }}
         loop
         breakpoints={{
           768: {
@@ -33,13 +29,13 @@ const Carroselpedidos = () => {
           }
         }}
       >
-        {produtos.map((img, index) => (
-          <SwiperSlide key={index}>
+        {produtos.map((produtos) => (
+          <SwiperSlide key={produtos.id}>
             <div className="card-produto">
-              <img src={img} alt={`Produto ${index + 1}`} />
+              <img src={produtos.imagemUrl} alt={`Produto ${produtos.nome}`} />
               <div className="info-produto">
-                <p>Nome Produto</p>
-                <span>R$ - VALOR</span>
+                <p>{produtos.nome}</p>
+                <span>R$ {produtos.preco}</span>
               </div>
             </div>
           </SwiperSlide>

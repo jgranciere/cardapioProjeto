@@ -1,6 +1,6 @@
 .nav-bar{
-    width: 100%;
-    background-color: rgb(255, 227, 227);
+    width: 50%;
+    background-color: rgb(231, 231, 231);
     display: flex;
     justify-content: space-around;
     padding: 10px;
@@ -19,9 +19,11 @@
     flex-direction: column;
 }
 
+
+
 .icone {
     font-size: 20px;
-    color: rgba(20, 20, 20, 0.603);
+    color: rgb(0, 0, 0);
 }
 
 .inicio:hover, .carrinho:hover{
@@ -30,7 +32,7 @@
 
 .carrinho p, .inicio p {
     font-size: 10px;
-    font-weight: bold;
+    font-weight: 500;
     margin: 0;
 }
 
@@ -38,5 +40,6 @@
 @media (max-width: 1024px) {
     .nav-bar{
         justify-content: space-around;
+        width: 100%;
     }
 }
