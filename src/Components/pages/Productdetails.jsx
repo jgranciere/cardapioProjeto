@@ -19,13 +19,18 @@ const ProductDetails = () => {
     const navigate = useNavigate();
     const { adicionarAoCarrinho } = useCarrinho();
 
-
+    const [showArrow, setShowArrow] = useState(true);
     const produtoSelecionado = state?.produto || state?.bebida;
+   
+
 
 
     if (!produtoSelecionado) {
         return <p>Produto não encontrado para o ID: {id}</p>
     }
+
+
+    
 
     const [mensagem, setMensagem] = useState('');
 

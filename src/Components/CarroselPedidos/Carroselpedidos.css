@@ -1,5 +1,5 @@
 .carrosel-container {
-  padding: 1rem;
+  padding: 10px;
 }
 
 .titulo-carrosel {
@@ -10,12 +10,14 @@
 
 .card-produto {
   background-color: #ffffff;
-  border-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   height: 100%;
   max-height: 200px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.384);
 }
 
 .card-produto img {
@@ -24,21 +26,31 @@
   object-fit: cover;
 }
 
-.info-produto p {
-  margin-top: 0;
-  margin-bottom: 0;
+.info-produto {
+  background-color: rgba(255, 255, 255, 0.589);
+  color: #000;
+  padding: 10px 10px 10px 10px;
+
 }
 
-.info-produto {
-  background-color: antiquewhite;
+.info-produto p{
+  font-size: 12px;
+  font-weight: 600;
   color: #000;
-  font-size: 0.9rem;
+}
+
+.info-produto span{
+  font-size: 10px;
+  font-weight: 400;
+  color: #000;
 }
 
 .swiper-pagination {
   position: relative !important;
   margin-top: 10px; /* empurra as bolinhas para baixo */
 }
+
+
 
 @media (min-width: 1024px) {
   .card-produto img {

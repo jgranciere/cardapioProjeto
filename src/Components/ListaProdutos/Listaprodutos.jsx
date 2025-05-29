@@ -26,12 +26,12 @@ const Listaprodutos = () => {
                                         <p>{produto.descricao}</p>
                                         <span>R$ {produto.preco}</span>
                                     </div>
-                                    
+
                                     <div className='infos-imagem'>
                                         <img src={produto.imagemUrl} alt={`Imagem do ${produto.nome}`} />
                                     </div>
                                 </div>
-                                
+
                             </Link>
                         ))}
                     </div>
@@ -47,12 +47,12 @@ const Listaprodutos = () => {
                                         <p>{produto.descricao}</p>
                                         <span>R$ {produto.preco}</span>
                                     </div>
-                                    
+
                                     <div className='infos-imagem'>
                                         <img src={produto.imagemUrl} alt={`Imagem do ${produto.nome}`} />
                                     </div>
                                 </div>
-                                
+
                             </Link>
                         ))}
                     </div>
@@ -63,6 +63,3 @@ const Listaprodutos = () => {
 }
 
 export default Listaprodutos
-
-
-
