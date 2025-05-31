@@ -1,12 +1,20 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const CarrinhoContext = createContext();
 
 export const useCarrinho = () => useContext(CarrinhoContext);
 
-
 export const CarrinhoProvider = ({ children }) => {
-  const [carrinho, setCarrinho] = useState([]);
+  const [carrinho, setCarrinho] = useState(() => {
+    // Carrega do localStorage ao iniciar
+    const carrinhoSalvo = localStorage.getItem('carrinho');
+    return carrinhoSalvo ? JSON.parse(carrinhoSalvo) : [];
+  });
+
+  // Sempre que o carrinho mudar, salva no localStorage
+  useEffect(() => {
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
+  }, [carrinho]);
 
   const adicionarAoCarrinho = (produto) => {
     setCarrinho(prevCarrinho => {
@@ -33,7 +41,7 @@ export const CarrinhoProvider = ({ children }) => {
   };
 
   const alterarQuantidade = (id, novaQuantidade) => {
-    if (novaQuantidade < 1) return; // Não deixa quantidade menor que 1
+    if (novaQuantidade < 1) return;
     setCarrinho(prevCarrinho =>
       prevCarrinho.map(item =>
         item.id === id

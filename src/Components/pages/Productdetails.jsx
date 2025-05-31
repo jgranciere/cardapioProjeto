@@ -1,49 +1,45 @@
-import { useLocation, useParams } from 'react-router-dom'
-import { useState } from 'react';
-import './ProductDetails.css'
-import { useNavigate } from 'react-router-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
-import BarraInferior from '../BarraInferior/barraInferior'
-import Listaprodutos from '../ListaProdutos/Listaprodutos'
+import { useLocation, useParams, useNavigate } from 'react-router-dom';
+import { useState, useContext } from 'react';
+import './ProductDetails.css';
+import BarraInferior from '../BarraInferior/barraInferior';
 import { useCarrinho } from '../../context/CarrinhoContext';
-import React, { useContext } from 'react';
 import { ProdutosContext } from '../../context/ProdutosContext';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 const ProductDetails = () => {
     const { produtos } = useContext(ProdutosContext);
-    console.log(produtos);
     const { state } = useLocation();
-    const { id } = useParams()
+    const { id } = useParams();
     const navigate = useNavigate();
     const { adicionarAoCarrinho } = useCarrinho();
 
-    const [showArrow, setShowArrow] = useState(true);
     const produtoSelecionado = state?.produto || state?.bebida;
-   
 
-
+    const [mensagem, setMensagem] = useState('');
+    const [mensagemProdutoId, setMensagemProdutoId] = useState(null); // Para produtos recomendados
 
     if (!produtoSelecionado) {
-        return <p>Produto não encontrado para o ID: {id}</p>
+        return <p>Produto não encontrado para o ID: {id}</p>;
     }
-    const [mensagem, setMensagem] = useState('');
 
-    const handleAdicionarCarrinho = () => {
+    const handleAdicionarCarrinhoPrincipal = () => {
         const produto = {
             id: produtoSelecionado.id,
             nome: produtoSelecionado.nome,
             preco: produtoSelecionado.preco,
-            imagemUrl: produtoSelecionado.imagemUrl
+            imagemUrl: produtoSelecionado.imagemUrl,
         };
         adicionarAoCarrinho(produto);
         setMensagem('✅ Produto adicionado ao carrinho!');
-
-        // Limpa a mensagem depois de 3 segundos
         setTimeout(() => setMensagem(''), 3000);
     };
 
+    const handleAdicionarCarrinhoRecomendado = (produto) => {
+        adicionarAoCarrinho(produto);
+        setMensagemProdutoId(produto.id);
+        setTimeout(() => setMensagemProdutoId(null), 3000);
+    };
 
     const produtosRecomendados = produtos.filter(p => p.id !== produtoSelecionado.id);
 
@@ -59,17 +55,15 @@ const ProductDetails = () => {
                     <h1>{produtoSelecionado.nome}</h1>
                     <p>{produtoSelecionado.descricao}</p>
                     <span>R$ {produtoSelecionado.preco}</span>
-                    <button onClick={handleAdicionarCarrinho} className="botao-adicionar-carrinho">
+                    <button onClick={handleAdicionarCarrinhoPrincipal} className="botao-adicionar-carrinho">
                         Adicionar ao Carrinho
                     </button>
                     {mensagem && <div className="mensagem-carrinho">{mensagem}</div>}
-
-
                 </div>
 
                 <div className='produto-more-separete'>
                     <div className='produto-separate'>
-                        <p>Escolha mais itens !</p>
+                        <p>Escolha mais itens!</p>
                     </div>
                 </div>
 
@@ -83,6 +77,22 @@ const ProductDetails = () => {
                                 </div>
 
                                 <img src={produto.imagemUrl} alt={`Imagem do ${produto.nome}`} />
+
+                                <button
+                                    onClick={() => handleAdicionarCarrinhoRecomendado({
+                                        id: produto.id,
+                                        nome: produto.nome,
+                                        preco: produto.preco,
+                                        imagemUrl: produto.imagemUrl,
+                                    })}
+                                    className="botao-adicionar-recomended"
+                                >
+                                    <FontAwesomeIcon icon={faCartShopping} className='icone' />
+                                </button>
+
+                                {mensagemProdutoId === produto.id && (
+                                    <div className="mensagem-carrinho">✅ Adicionado ao carrinho!</div>
+                                )}
                             </div>
                         ))}
                     </div>
@@ -90,7 +100,7 @@ const ProductDetails = () => {
             </div>
             <BarraInferior />
         </div>
-    )
-}
+    );
+};
 
-export default ProductDetails
+export default ProductDetails;
