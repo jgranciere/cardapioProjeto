@@ -8,7 +8,7 @@ import { useContext } from 'react';
 import { ProdutosContext } from '../../context/ProdutosContext';
 
 const Carroselpedidos = () => {
-  const { produtos } = useContext(ProdutosContext);
+  const { maisPedidos } = useContext(ProdutosContext);
 
   return (
     <section className="carrosel-container">
@@ -29,7 +29,7 @@ const Carroselpedidos = () => {
           }
         }}
       >
-        {produtos.map((produtos) => (
+        {maisPedidos.map((produtos) => (
           <SwiperSlide key={produtos.id}>
             <div className="card-produto">
               <img src={produtos.imagemUrl} alt={`Produto ${produtos.nome}`} />

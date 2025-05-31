@@ -6,6 +6,7 @@ export const ProdutosContext = createContext();
 
 export const ProdutosProvider = ({ children }) => {
   const [produtos, setProdutos] = useState([]);
+  const [maisPedidos, setMaisPedidos] = useState([]);
 
   useEffect(() => {
     fetch('https://localhost:7027/api/produto')
@@ -19,8 +20,20 @@ export const ProdutosProvider = ({ children }) => {
       .catch(error => console.error('Erro:', error));
   }, []);
 
+  useEffect(() => {
+    fetch('https://localhost:7027/api/produto/maispedido')
+      .then(response => {
+        if (!response.ok) {s
+          throw new Error('Erro ao buscar produtos mais pedidos');
+        }
+        return response.json();
+      })
+      .then(data => setMaisPedidos(data))
+      .catch(error => console.error('Erro:', error));
+  }, []);
+
   return (
-    <ProdutosContext.Provider value={{ produtos }}>
+    <ProdutosContext.Provider value={{ produtos, maisPedidos }}>
       {children}
     </ProdutosContext.Provider>
   );
