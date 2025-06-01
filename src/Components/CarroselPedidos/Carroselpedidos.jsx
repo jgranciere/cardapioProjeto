@@ -18,7 +18,7 @@ const Carroselpedidos = () => {
         spaceBetween={16}
         slidesPerView={2}
         pagination={{ clickable: true }}
-        autoplay={{ delay: 35000 }}
+        autoplay={{ delay: 3000 }}
         loop
         breakpoints={{
           768: {

@@ -5,7 +5,8 @@ import BarraInferior from '../BarraInferior/barraInferior';
 import { useCarrinho } from '../../context/CarrinhoContext';
 import { ProdutosContext } from '../../context/ProdutosContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft, faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faCartShopping, faCheck, faPlus } from '@fortawesome/free-solid-svg-icons';
+
 
 const ProductDetails = () => {
     const { produtos } = useContext(ProdutosContext);
@@ -17,7 +18,7 @@ const ProductDetails = () => {
     const produtoSelecionado = state?.produto || state?.bebida;
 
     const [mensagem, setMensagem] = useState('');
-    const [mensagemProdutoId, setMensagemProdutoId] = useState(null); // Para produtos recomendados
+    const [mensagemProdutoId, setMensagemProdutoId] = useState(null); 
 
     if (!produtoSelecionado) {
         return <p>Produto não encontrado para o ID: {id}</p>;
@@ -41,7 +42,9 @@ const ProductDetails = () => {
         setTimeout(() => setMensagemProdutoId(null), 3000);
     };
 
-    const produtosRecomendados = produtos.filter(p => p.id !== produtoSelecionado.id);
+    
+    const comidas = produtos.filter(produto => produto.categoria !== 'bebida');
+    const bebidas = produtos.filter(produto => produto.categoria === 'bebida');
 
     return (
         <div className='produto-detail-container'>
@@ -69,29 +72,64 @@ const ProductDetails = () => {
 
                 <div className='produto-more-list-details'>
                     <div className='produto-more-list-cards'>
-                        {produtosRecomendados.map(produto => (
-                            <div key={produto.id} className='produto-recomended-card'>
-                                <div className='produto-recomended-name'>
-                                    <p>{produto.nome}</p>
-                                    <p>R$ {produto.preco}</p>
-                                </div>
+                        <h1 className='titulo-card-produtos'>Comidas</h1>
+                        {comidas.map(produto => (
+                            <div className='produto-recomended-card-pai'>
+                                <div key={produto.id} className='produto-recomended-card'>
+                                    <div className='produto-recomended-name'>
+                                        <p>{produto.nome}</p>
+                                        <p>R$ {produto.preco}</p>
+                                    </div>
 
-                                <img src={produto.imagemUrl} alt={`Imagem do ${produto.nome}`} />
+                                    <img src={produto.imagemUrl} alt={`Imagem do ${produto.nome}`} />
 
-                                <button
-                                    onClick={() => handleAdicionarCarrinhoRecomendado({
-                                        id: produto.id,
-                                        nome: produto.nome,
-                                        preco: produto.preco,
-                                        imagemUrl: produto.imagemUrl,
-                                    })}
-                                    className="botao-adicionar-recomended"
-                                >
-                                    <FontAwesomeIcon icon={faCartShopping} className='icone' />
-                                </button>
-
+                                    <button
+                                        onClick={() => handleAdicionarCarrinhoRecomendado({
+                                            id: produto.id,
+                                            nome: produto.nome,
+                                            preco: produto.preco,
+                                            imagemUrl: produto.imagemUrl,
+                                        })}
+                                        className="botao-adicionar-recomended"
+                                    >
+                                        <FontAwesomeIcon icon={faPlus} className='icone' />
+                                    </button>
+                                    
+                                </div> 
                                 {mensagemProdutoId === produto.id && (
-                                    <div className="mensagem-carrinho">✅ Adicionado ao carrinho!</div>
+                                        <div className="mensagem-carrinho"><FontAwesomeIcon icon={faCheck} className='icone-add-carrinho'/>Adicionado ao carrinho!</div>
+                                )}
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className='produto-more-list-cards'>
+                        <h1 className='titulo-card-produtos'>Comidas</h1>
+                        {bebidas.map(produto => (
+                            <div className='produto-recomended-card-pai'>
+                                <div key={produto.id} className='produto-recomended-card'>
+                                    <div className='produto-recomended-name'>
+                                        <p>{produto.nome}</p>
+                                        <p>R$ {produto.preco}</p>
+                                    </div>
+
+                                    <img src={produto.imagemUrl} alt={`Imagem do ${produto.nome}`} />
+
+                                    <button
+                                        onClick={() => handleAdicionarCarrinhoRecomendado({
+                                            id: produto.id,
+                                            nome: produto.nome,
+                                            preco: produto.preco,
+                                            imagemUrl: produto.imagemUrl,
+                                        })}
+                                        className="botao-adicionar-recomended"
+                                    >
+                                        <FontAwesomeIcon icon={faPlus} className='icone' />
+                                    </button>
+                                    
+                                </div> 
+                                {mensagemProdutoId === produto.id && (
+                                        <div className="mensagem-carrinho"><FontAwesomeIcon icon={faCheck} className='icone-add-carrinho'/>Adicionado ao carrinho!</div>
                                 )}
                             </div>
                         ))}

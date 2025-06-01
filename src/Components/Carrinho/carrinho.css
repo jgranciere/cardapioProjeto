@@ -13,3 +13,49 @@
 img.object-fit-cover {
     object-fit: cover;
 }
+
+.carrinho-vazio{
+    height: 200px;
+}
+
+.btn-compra{
+    background-color: #28a745;
+    color: white;
+    border: none;
+}
+
+.compra-finalizada{
+    margin-bottom: 100px;
+}
+
+.img-carrinho-vazio{
+    height: 200px;
+    width: 200px;
+    margin-top: 10px;
+    object-fit: cover;
+}
+
+.btn-remove{
+    border: none;
+    background-color: rgb(253, 64, 64);
+    padding: 2px 6px;
+    height: 30px;
+    width: 30px;
+    border-radius: 20px;
+}
+
+.btn-add{
+    border: none;
+    background-color: #28a745;
+    padding: 2px 6px;
+    height: 30px;
+    width: 30px;
+    border-radius: 20px;
+}
+
+.icone-carrinho{
+    font-size: 15px;
+    color: #fff;
+}
+
+
