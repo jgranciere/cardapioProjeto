@@ -50,14 +50,14 @@ const Carrinho = () => {
                                                     className="btn-remove"
                                                     onClick={() => alterarQuantidade(produto.id, produto.quantidade - 1)}
                                                 >
-                                                    <FontAwesomeIcon icon={faMinus} className='icone-carrinho' />
+                                                    <FontAwesomeIcon icon={faMinus} className='icone-carrinho-sub' />
                                                 </button>
                                                 {produto.quantidade}
                                                 <button
                                                     className="btn-add"
                                                     onClick={() => alterarQuantidade(produto.id, produto.quantidade + 1)}
                                                 >
-                                                    <FontAwesomeIcon icon={faPlus} className='icone-carrinho' />
+                                                    <FontAwesomeIcon icon={faPlus} className='icone-carrinho-add' />
                                                 </button>
                                             </p>
                                             <p className="card-text fw-bold">

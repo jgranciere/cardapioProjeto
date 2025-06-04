@@ -104,7 +104,7 @@ const ProductDetails = () => {
                     </div>
 
                     <div className='produto-more-list-cards'>
-                        <h1 className='titulo-card-produtos'>Comidas</h1>
+                        <h1 className='titulo-card-produtos'>Bebidas</h1>
                         {bebidas.map(produto => (
                             <div className='produto-recomended-card-pai'>
                                 <div key={produto.id} className='produto-recomended-card'>

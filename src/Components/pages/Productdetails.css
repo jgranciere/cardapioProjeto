@@ -68,17 +68,17 @@
 .produto-detail-info span {
   display: block;
   font-size: 20px;
-  font-weight: 600;
-  color: #2ecc71;
+  font-weight: 700;
+  color: #000000;
   margin-bottom: 16px;
 }
 
 .botao-adicionar-carrinho {
   width: 100%;
   padding: 10px;
-  background-color: #27ae60;
+  background-color: #000000;
   color: white;
-  border: none;
+  border: 1px solid #000000;
   border-radius: 5px;
   font-size: 16px;
   font-weight: 600;
@@ -87,8 +87,10 @@
 }
 
 .botao-adicionar-carrinho:hover {
-  background-color: #219150;
+  background-color: #ffffff;
   transform: scale(1.02);
+  color: #000000;
+  border: 1px solid #000000;
 }
 
 /* AVISO DO CARRINHO */

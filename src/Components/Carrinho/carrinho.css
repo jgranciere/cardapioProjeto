@@ -36,26 +36,39 @@ img.object-fit-cover {
 }
 
 .btn-remove{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: none;
-    background-color: rgb(253, 64, 64);
+    background-color: rgb(255, 255, 255);
     padding: 2px 6px;
     height: 30px;
     width: 30px;
     border-radius: 20px;
+    border: 1px solid #000000;
 }
 
 .btn-add{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: none;
-    background-color: #28a745;
+    background-color: #000000;
     padding: 2px 6px;
     height: 30px;
     width: 30px;
     border-radius: 20px;
 }
 
-.icone-carrinho{
+.icone-carrinho-sub{
     font-size: 15px;
-    color: #fff;
+    color: #000000;
+    
+}
+
+.icone-carrinho-add{
+    font-size: 15px;
+    color: #ffffff;
 }
 
 
