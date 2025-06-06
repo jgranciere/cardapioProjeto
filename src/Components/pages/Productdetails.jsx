@@ -57,7 +57,7 @@ const ProductDetails = () => {
                 <div className='produto-detail-info'>
                     <h1>{produtoSelecionado.nome}</h1>
                     <p>{produtoSelecionado.descricao}</p>
-                    <span className='value-span-detail'><span className='span-rs'>R$</span>{produtoSelecionado.preco}</span>
+                    <span className='value-span-detail'><span className='span-rs'>R$</span>{parseFloat(produtoSelecionado.preco).toFixed(2)}</span>
                     <button onClick={handleAdicionarCarrinhoPrincipal} className="botao-adicionar-carrinho">
                         Adicionar ao Carrinho
                     </button>
@@ -90,7 +90,7 @@ const ProductDetails = () => {
 
                                     <div className='produto-recomended-name'>
                                         <p>{produto.nome}</p>
-                                        <p><span className='span-rs'>R$</span>{produto.preco}</p>
+                                        <p><span className='span-rs'>R$</span>{parseFloat(produto.preco).toFixed(2)}</p>
                                     </div>
 
                                     <img src={produto.imagemUrl} alt={`Imagem do ${produto.nome}`} />
@@ -124,7 +124,7 @@ const ProductDetails = () => {
                                     
                                     <div className='produto-recomended-name'>
                                         <p>{produto.nome}</p>
-                                        <p><span className='span-rs'>R$</span>{produto.preco}</p>
+                                        <p><span className='span-rs'>R$</span>{parseFloat(produto.preco).toFixed(2)}</p>
                                     </div>
 
                                     <img src={produto.imagemUrl} alt={`Imagem do ${produto.nome}`} />

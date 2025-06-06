@@ -41,7 +41,7 @@ const Listaprodutos = ({ termoBusca  }) => {
                                     <div className='infos-img-card-product'>
                                         <div className='infos-card-product'>
                                             <h1>{produto.nome}</h1>
-                                            <span><span className='span-rs'>R$</span>{produto.preco}</span>                                        
+                                            <span><span className='span-rs'>R$</span>{parseFloat(produto.preco).toFixed(2)}</span>                                        
                                         </div>
 
                                         <div className='div-infos-img'>
@@ -68,7 +68,7 @@ const Listaprodutos = ({ termoBusca  }) => {
                                     <div className='infos-img-card-product'>
                                         <div className='infos-card-product'>
                                             <h1>{produto.nome}</h1>
-                                            <span><span className='span-rs'>R$</span>{produto.preco}</span>                                        
+                                            <span><span className='span-rs'>R$</span>{parseFloat(produto.preco).toFixed(2)}</span>                                        
                                         </div>
 
                                         <div className='div-infos-img'>

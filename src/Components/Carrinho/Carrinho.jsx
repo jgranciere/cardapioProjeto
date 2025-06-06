@@ -12,7 +12,7 @@ const Carrinho = () => {
     const { carrinho, removerDoCarrinho, alterarQuantidade, total } = useCarrinho();
 
     return (
-        <div className="carrinho-container bg-light min-vh-100">
+        <div className="carrinho-container bg-light w-100 min-vh-100">
             <Navbar />
             <div className="container py-4 d-flex flex-column align-items-center">
                 <h2 className="mb-3 fw-bold">Meu carrinho</h2>
