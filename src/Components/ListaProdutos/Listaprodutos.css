@@ -34,10 +34,11 @@
 
 .infos-produtos{
     display: flex;
+    width: 100%;
     flex-direction: row-reverse;
     padding: 5px;
     background-color: white;
-    border: 1px solid rgba(0, 0, 0, 0.192);
+    border: 1px solid rgba(0, 0, 0, 0.13);
     justify-content: space-between;
     align-items: center;
     margin: 5px 0px 5px 0px;
@@ -86,12 +87,12 @@
 }
 
 .add-product{
-    width: 70px;
-    margin-right: 10px;
+    height: 30px;
+    width: 30px;
     border-radius: 50px;
     border: none;
     color: white;
-    background-color: black;
+    background-color: rgb(238, 238, 238);
     padding: 5px;
     display: flex;
     align-items: center;
@@ -100,31 +101,45 @@
     gap: 5px;
 }
 
-.price-add{
-    width: 100%;
+.button-add-product{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    
+    width: 20%;
 }
 
-.button-add-produto {
+.price-add span{
+    font-weight: 500;
+}
+
+.infos-card-product .span-rs{
+    font-size: 12px;
+    margin-right: 5px;
+    color: rgba(0, 0, 0, 0.589);
+}
+
+.infos-card-product{
     display: flex;
-    align-items: start;
-    justify-content: flex-start;
-    align-self: flex-end;
-    width: 100%;
     flex-direction: column;
-    margin-left: 10px;
-    gap: 40px;
+    justify-content: center;
 }
 
-.button-add-produto h1,
-.button-add-produto p {
-    margin: 0;
-    padding: 0;
+.infos-img-card-product{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 80%;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
 }
 
-.icone-carrinho-add p{
-    font-size: 2px;
+.add-product .icone-carrinho-add{
+    color: rgba(0, 0, 0, 0.589);
+    font-size: 12px;
+}
+
+.add-product:hover {
+  transform: scale(1.1);
+  transition: .3s;
+  background-color: #696969;
 }

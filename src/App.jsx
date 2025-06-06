@@ -9,7 +9,8 @@ import { ProdutosProvider } from './context/ProdutosContext'
 
 
 const App = () => {
-  const [carrinho, setCarrinho] = useState([]);
+  const [termoBusca, setTermoBusca] = useState('');
+
    
   return (
     <Router>
@@ -18,8 +19,8 @@ const App = () => {
           <Routes>
             <Route path="/" element={
               <>
-                <Navbar />
-                <Telaprincipal />
+                <Navbar setTermoBusca={setTermoBusca}/>
+                <Telaprincipal termoBusca={termoBusca}/>
               </>
             } />
             <Route path="/produto/:id" element={<ProductDetails />} />

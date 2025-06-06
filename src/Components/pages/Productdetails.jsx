@@ -57,7 +57,7 @@ const ProductDetails = () => {
                 <div className='produto-detail-info'>
                     <h1>{produtoSelecionado.nome}</h1>
                     <p>{produtoSelecionado.descricao}</p>
-                    <span>R$ {produtoSelecionado.preco}</span>
+                    <span className='value-span-detail'><span className='span-rs'>R$</span>{produtoSelecionado.preco}</span>
                     <button onClick={handleAdicionarCarrinhoPrincipal} className="botao-adicionar-carrinho">
                         Adicionar ao Carrinho
                     </button>
@@ -76,13 +76,6 @@ const ProductDetails = () => {
                         {comidas.map(produto => (
                             <div className='produto-recomended-card-pai'>
                                 <div key={produto.id} className='produto-recomended-card'>
-                                    <div className='produto-recomended-name'>
-                                        <p>{produto.nome}</p>
-                                        <p>R$ {produto.preco}</p>
-                                    </div>
-
-                                    <img src={produto.imagemUrl} alt={`Imagem do ${produto.nome}`} />
-
                                     <button
                                         onClick={() => handleAdicionarCarrinhoRecomendado({
                                             id: produto.id,
@@ -94,6 +87,15 @@ const ProductDetails = () => {
                                     >
                                         <FontAwesomeIcon icon={faPlus} className='icone' />
                                     </button>
+
+                                    <div className='produto-recomended-name'>
+                                        <p>{produto.nome}</p>
+                                        <p><span className='span-rs'>R$</span>{produto.preco}</p>
+                                    </div>
+
+                                    <img src={produto.imagemUrl} alt={`Imagem do ${produto.nome}`} />
+
+                                    
                                     
                                 </div> 
                                 {mensagemProdutoId === produto.id && (
@@ -108,13 +110,6 @@ const ProductDetails = () => {
                         {bebidas.map(produto => (
                             <div className='produto-recomended-card-pai'>
                                 <div key={produto.id} className='produto-recomended-card'>
-                                    <div className='produto-recomended-name'>
-                                        <p>{produto.nome}</p>
-                                        <p>R$ {produto.preco}</p>
-                                    </div>
-
-                                    <img src={produto.imagemUrl} alt={`Imagem do ${produto.nome}`} />
-
                                     <button
                                         onClick={() => handleAdicionarCarrinhoRecomendado({
                                             id: produto.id,
@@ -126,6 +121,15 @@ const ProductDetails = () => {
                                     >
                                         <FontAwesomeIcon icon={faPlus} className='icone' />
                                     </button>
+                                    
+                                    <div className='produto-recomended-name'>
+                                        <p>{produto.nome}</p>
+                                        <p><span className='span-rs'>R$</span>{produto.preco}</p>
+                                    </div>
+
+                                    <img src={produto.imagemUrl} alt={`Imagem do ${produto.nome}`} />
+
+                                    
                                     
                                 </div> 
                                 {mensagemProdutoId === produto.id && (

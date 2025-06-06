@@ -21,7 +21,7 @@ export const ProdutosProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    fetch('https://localhost:7027/api/produto/maispedido')
+    fetch('https://localhost:7027/api/maisPedidos')
       .then(response => {
         if (!response.ok) {s
           throw new Error('Erro ao buscar produtos mais pedidos');

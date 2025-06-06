@@ -66,11 +66,17 @@
 }
 
 .produto-detail-info span {
-  display: block;
+  display: flex;
+  align-items: center;
   font-size: 20px;
   font-weight: 700;
   color: #000000;
   margin-bottom: 16px;
+}
+
+.value-span-detail .span-rs{
+  margin-bottom: 0px;
+  font-weight: 400;
 }
 
 .botao-adicionar-carrinho {
@@ -132,16 +138,30 @@
 /* TÍTULO - MAIS ITENS */
 .produto-more-separete {
   width: 100%;
-  background-color: #d4d4d4;
+  background-color: rgb(255, 115, 0);
   padding: 14px 20px;
+
 }
 
 .produto-separate p {
   font-size: 16px;
   font-weight: 600;
   margin: 0;
-  color: #080808;
+  color: #ffffff;
 }
+
+.produto-recomended-name .span-rs{
+    font-size: 12px;
+    margin-right: 5px;
+    color: rgba(0, 0, 0, 0.589);
+}
+
+.produto-detail-info .span-rs {
+    font-size: 12px;
+    margin-right: 5px;
+    color: rgba(0, 0, 0, 0.589);
+}
+
 
 /* LISTA DE PRODUTOS RECOMENDADOS */
 .produto-more-list-details {
@@ -161,7 +181,6 @@
 
 .produto-recomended-card-pai{
   display: flex;
-
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -170,10 +189,10 @@
 .produto-recomended-card {
   display: flex;
   width: 100%;
-  flex-direction: row;
+  flex-direction: row-reverse;
   align-items: center;
   background: #fff;
-  padding: 12px 12px;
+  padding: 5px 5px;
   border-radius: 5px;
   border: 1px solid #e0e0e0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
@@ -181,9 +200,9 @@
 }
 
 .produto-recomended-card img {
-  width: 80px;
-  height: 80px;
-  border-radius: 10px;
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
   object-fit: cover;
 }
 
@@ -200,27 +219,31 @@
 
 /* BOTÃO DE CARRINHO */
 .botao-adicionar-recomended {
-  background-color: #8effbd;
-  border: none;
-  border-radius: 20%;
-  transition: transform 0.2s, background-color 0.3s;
-  color: #fff;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
   height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    border: none;
+    color: white;
+    background-color: rgb(238, 238, 238);
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    gap: 5px;
+    margin-right: 10px;
 }
 
+
 .produto-recomended-card .icone {
-  font-size: 20px;
-  color: #ffffff;  
+    color: rgba(0, 0, 0, 0.589);
+    font-size: 12px;
 }
 
 .botao-adicionar-recomended:hover {
   transform: scale(1.1);
-  background-color: #219150;
+  transition: .3s;
+  background-color: #696969;
 }
 
 /* ÍCONES */
@@ -249,8 +272,6 @@
 .mensagem-carrinho .icone-add-carrinho{
   margin-right: 10px; 
 }
-
-
 
 .titulo-card-produtos{
   margin-bottom: 0;

@@ -7,37 +7,50 @@ import { ProdutosContext } from '../../context/ProdutosContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons'
 
-const Listaprodutos = () => {
+const Listaprodutos = ({ termoBusca  }) => {
+
     const { produtos } = useContext(ProdutosContext);
 
     const comidas = produtos.filter(produto => produto.categoria !== 'bebida');
     const bebidas = produtos.filter(produto => produto.categoria === 'bebida');
 
+    const comidasFiltradas = comidas.filter(produto =>
+        produto.nome.toLowerCase().includes(termoBusca.toLowerCase())
+    );
+
+    const bebidasFiltradas = bebidas.filter(produto =>
+        produto.nome.toLowerCase().includes(termoBusca.toLowerCase())
+    );
+
+    console.log(termoBusca)
+    console.log(produtos)
     return (
         <div className='container-lista-produtos'>
             <div className='container-produtos'>
                 <h1>Produtos</h1>
                 <div className='container-produtos-list'>
                     <div className='produto-card'>
-                        {comidas.map(produto => (
+                        {comidasFiltradas.map(produto => (
                             <Link to={`/produto/${produto.id}`} state={{ produto }} key={produto.id} className='cards'>
                                 <div className='infos-produtos'>
-                                    <div className='button-add-produto'>
-                                        <h1>{produto.nome}</h1>
-                                        
-                                        <div className='price-add'>
-                                            <span>R$ {produto.preco}</span>
-                                            <button className='add-product'><FontAwesomeIcon icon={faPlus} className='icone-carrinho-add'/>Add</button>
-                                        </div>
+                                    <div className='button-add-product'> 
+                                        <button className='add-product'><FontAwesomeIcon icon={faPlus} className='icone-carrinho-add'/></button>
                                     </div>
 
-                                    <div className='div-infos-img'>
-                                        <div className='infos-imagem'>
-                                            <img src={produto.imagemUrl} alt={`Imagem do ${produto.nome}`} />
+
+                                    <div className='infos-img-card-product'>
+                                        <div className='infos-card-product'>
+                                            <h1>{produto.nome}</h1>
+                                            <span><span className='span-rs'>R$</span>{produto.preco}</span>                                        
+                                        </div>
+
+                                        <div className='div-infos-img'>
+                                            <div className='infos-imagem'>
+                                                <img src={produto.imagemUrl} alt={`Imagem do ${produto.nome}`} />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-
                             </Link>
                         ))}
                     </div>
@@ -45,25 +58,26 @@ const Listaprodutos = () => {
 
                     <h1>Bebidas</h1>
                     <div className='produto-card'>
-                        {bebidas.map(produto => (
+                        {bebidasFiltradas.map(produto => (
                             <Link to={`/produto/${produto.id}`} state={{ produto }} key={produto.id} className='cards'>
                                 <div className='infos-produtos'>
-                                    <div className='button-add-produto'>
-                                        <h1>{produto.nome}</h1>
-                                        
-                                        <div className='price-add'>
-                                            <span>R$ {produto.preco}</span>
-                                            <button className='add-product'><FontAwesomeIcon icon={faPlus} className='icone-carrinho-add'/>Add</button>
-                                        </div>
+                                    <div className='button-add-product'> 
+                                        <button className='add-product'><FontAwesomeIcon icon={faPlus} className='icone-carrinho-add'/></button>
                                     </div>
 
-                                    <div className='div-infos-img'>
-                                        <div className='infos-imagem'>
-                                            <img src={produto.imagemUrl} alt={`Imagem do ${produto.nome}`} />
+                                    <div className='infos-img-card-product'>
+                                        <div className='infos-card-product'>
+                                            <h1>{produto.nome}</h1>
+                                            <span><span className='span-rs'>R$</span>{produto.preco}</span>                                        
+                                        </div>
+
+                                        <div className='div-infos-img'>
+                                            <div className='infos-imagem'>
+                                                <img src={produto.imagemUrl} alt={`Imagem do ${produto.nome}`} />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-
                             </Link>
                         ))}
                     </div>

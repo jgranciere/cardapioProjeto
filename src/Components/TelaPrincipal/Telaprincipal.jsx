@@ -5,11 +5,11 @@ import Listaprodutos from '../ListaProdutos/Listaprodutos'
 import BarraInferior from '../BarraInferior/barraInferior'
 import { ProdutosContext } from '../../context/ProdutosContext'
 
-function Telaprincipal() {
+function Telaprincipal({termoBusca}) {
   return (
     <main className='main'>
         <Carroselpedidos/>
-        <Listaprodutos/>
+        <Listaprodutos termoBusca={termoBusca}/>
         <BarraInferior/>
     </main>
   )

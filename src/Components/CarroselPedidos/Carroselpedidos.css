@@ -49,6 +49,16 @@
   margin-top: 10px; /* empurra as bolinhas para baixo */
 }
 
+.swiper-pagination-bullet{
+  background-color: rgb(255, 115, 0) !important; /* cor das bolinhas */
+}
+
+
+
+.swiper-slide {
+  padding: 0px 0px 10px 0px; /* Espaço interno para afastar os cards das bordas */
+  box-sizing: border-box;
+}
 
 
 @media (min-width: 1024px) {
