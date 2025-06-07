@@ -4,6 +4,7 @@ import logo from '../../assets/logo.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass, faShareNodes } from '@fortawesome/free-solid-svg-icons'
 
+
 const Navbar = ({setTermoBusca }) => {
 
   const [showSearch, setShowSearch] = useState(false);
@@ -21,7 +22,7 @@ const Navbar = ({setTermoBusca }) => {
 
   return (
     <header className='header'>
-        <a href="/" className='logo'><img className='img-logo' src={logo} alt="" /></a>
+        <a href="/admin/login" className='logo'><img className='img-logo' src={logo} alt="" /></a>
 
         <div className={`logo-img-name ${showSearch ? 'hidden-logo' : ''}`}>
           <img className='logo-img' src="../public/Yume.svg" alt="" />

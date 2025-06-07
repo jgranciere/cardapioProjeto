@@ -6,6 +6,7 @@ import Carrinho from './Components/Carrinho/Carrinho'
 import { CarrinhoProvider } from './context/CarrinhoContext'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { ProdutosProvider } from './context/ProdutosContext'
+import AdminLogin from './Components/pages/AdminLogin/AdminLogin'
 
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
             <Route path="/produto/:id" element={<ProductDetails />} />
             <Route path="/bebida/:id" element={<ProductDetails />} />
             <Route path="/carrinho" element={<Carrinho />} />
+            <Route path="/admin/login" element={<AdminLogin />} />
           </Routes>
         </CarrinhoProvider>
       </ProdutosProvider>
