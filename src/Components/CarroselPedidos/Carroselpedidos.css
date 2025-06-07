@@ -34,12 +34,13 @@
 
 .info-produto p{
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 400;
   color: #000;
+  letter-spacing: 2px;
 }
 
 .info-produto span{
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 400;
   color: #000;
 }
@@ -53,7 +54,11 @@
   background-color: rgb(255, 115, 0) !important; /* cor das bolinhas */
 }
 
-
+.info-produto .rs-span{
+  font-size: 10px;
+  margin-right: 5px;
+  color: rgba(0, 0, 0, 0.589);
+}
 
 .swiper-slide {
   padding: 0px 0px 10px 0px; /* Espaço interno para afastar os cards das bordas */

@@ -1,15 +1,14 @@
-// src/context/ProdutosContext.jsx
-
 import { createContext, useEffect, useState } from 'react';
-
 export const ProdutosContext = createContext();
 
 export const ProdutosProvider = ({ children }) => {
   const [produtos, setProdutos] = useState([]);
   const [maisPedidos, setMaisPedidos] = useState([]);
 
+  const URL_API = 'https://localhost:7027/';
+
   useEffect(() => {
-    fetch('https://localhost:7027/api/produto')
+    fetch(`${URL_API}api/produto`)
       .then(response => {
         if (!response.ok) {
           throw new Error('Erro ao buscar produtos');
@@ -21,9 +20,9 @@ export const ProdutosProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    fetch('https://localhost:7027/api/maisPedidos')
+    fetch(`${URL_API}api/maisPedidos`)
       .then(response => {
-        if (!response.ok) {s
+        if (!response.ok) {
           throw new Error('Erro ao buscar produtos mais pedidos');
         }
         return response.json();

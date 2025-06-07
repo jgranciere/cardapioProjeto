@@ -35,7 +35,7 @@ const Carroselpedidos = () => {
               <img src={produtos.imagemUrl} alt={`Produto ${produtos.nome}`} />
               <div className="info-produto">
                 <p>{produtos.nome}</p>
-                <span>R$ {produtos.preco}</span>
+                <span><span className='rs-span'>R$</span>{produtos.preco}</span>
               </div>
             </div>
           </SwiperSlide>

@@ -73,7 +73,7 @@
 }
 
 .search-bar {
-  
+  width: 60%;
   opacity: 0;
   transform: translateY(-10px);
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -110,6 +110,6 @@
         opacity: 0;
         transform: translateY(-10px);
         transition: opacity 0.3s ease, transform 0.3s ease;
-        pointer-events: none; /* impede clique quando invisível */
+        pointer-events: none; 
     }
 }

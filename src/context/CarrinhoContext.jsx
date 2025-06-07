@@ -6,12 +6,12 @@ export const useCarrinho = () => useContext(CarrinhoContext);
 
 export const CarrinhoProvider = ({ children }) => {
   const [carrinho, setCarrinho] = useState(() => {
-    // Carrega do localStorage ao iniciar
+    
     const carrinhoSalvo = localStorage.getItem('carrinho');
     return carrinhoSalvo ? JSON.parse(carrinhoSalvo) : [];
   });
 
-  // Sempre que o carrinho mudar, salva no localStorage
+  
   useEffect(() => {
     localStorage.setItem('carrinho', JSON.stringify(carrinho));
   }, [carrinho]);
