@@ -32,7 +32,7 @@ const ProductDetails = () => {
             imagemUrl: produtoSelecionado.imagemUrl,
         };
         adicionarAoCarrinho(produto);
-        setMensagem('✅ Produto adicionado ao carrinho!');
+        setMensagem(<><FontAwesomeIcon icon={faCheck} className='icone-add-carrinho'/>Adicionado ao carrinho!</>);
         setTimeout(() => setMensagem(''), 3000);
     };
 
@@ -99,7 +99,9 @@ const ProductDetails = () => {
                                     
                                 </div> 
                                 {mensagemProdutoId === produto.id && (
-                                        <div className="mensagem-carrinho"><FontAwesomeIcon icon={faCheck} className='icone-add-carrinho'/>Adicionado ao carrinho!</div>
+                                        <div className="mensagem-carrinho">
+                                            <FontAwesomeIcon icon={faCheck} className='icone-add-carrinho'/>Adicionado ao carrinho!
+                                        </div>
                                 )}
                             </div>
                         ))}

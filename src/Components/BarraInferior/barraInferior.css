@@ -3,7 +3,6 @@
     background-color: rgb(231, 231, 231);
     display: flex;
     justify-content: space-around;
-    padding: 10px;
     align-items: center;
     position: fixed;
     bottom: 0;
@@ -17,12 +16,20 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border-top: 2px solid transparent;
+    height: 100%;
+    width: 30%;
 }
 
+.inicio.active,
+.carrinho.active {
+  border-top: 3px solid orange; 
+  ;
+}
 
-
-.icone {
-    font-size: 20px;
+.icone-carrinho, .icone-inicio {
+    width: 25px;
+    height: 22px;
     color: rgb(0, 0, 0);
 }
 

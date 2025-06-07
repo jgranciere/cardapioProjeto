@@ -267,6 +267,7 @@
   align-items: center;
   justify-self: space-around;
   margin: 0;
+  justify-content: center;
 }
 
 .mensagem-carrinho .icone-add-carrinho{

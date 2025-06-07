@@ -24,10 +24,17 @@
 .logo-img{
     height: auto;
     width: 90px;
+    
 }
 
 .logo-img-name {
   transition: opacity 0.3s ease;
+  display: relative;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .logo-img-name.hidden-logo {
@@ -77,6 +84,9 @@
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
+  display: flex;
+  justify-content: end;
+  width: 60%;
 }
 
 .input-search {
@@ -86,6 +96,7 @@
   background-color: rgb(49, 49, 49);
   color: #ffffff;
   outline: none;
+  width: 100%;
 }
 
 @media (max-width: 1024px) {

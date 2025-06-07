@@ -19,9 +19,14 @@ img.object-fit-cover {
 }
 
 .btn-compra{
-    background-color: #28a745;
+    background-color: rgb(255, 115, 0);
     color: white;
     border: none;
+}
+
+.btn-compra:hover{
+    background-color: rgb(0, 0, 0);
+    color: white;
 }
 
 .compra-finalizada{
@@ -70,5 +75,11 @@ img.object-fit-cover {
     font-size: 15px;
     color: #ffffff;
 }
+
+.card-text span{
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.589);
+}
+
 
 
