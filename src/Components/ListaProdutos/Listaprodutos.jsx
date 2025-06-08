@@ -7,7 +7,7 @@ import { ProdutosContext } from '../../context/ProdutosContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons'
 
-const Listaprodutos = ({ termoBusca  }) => {
+const Listaprodutos = ({ termoBusca }) => {
 
     const { produtos } = useContext(ProdutosContext);
 
@@ -33,15 +33,15 @@ const Listaprodutos = ({ termoBusca  }) => {
                         {comidasFiltradas.map(produto => (
                             <Link to={`/produto/${produto.id}`} state={{ produto }} key={produto.id} className='cards'>
                                 <div className='infos-produtos'>
-                                    <div className='button-add-product'> 
-                                        <button className='add-product'><FontAwesomeIcon icon={faPlus} className='icone-carrinho-add'/></button>
+                                    <div className='button-add-product'>
+                                        <button className='add-product'><FontAwesomeIcon icon={faPlus} className='icone-carrinho-add' /></button>
                                     </div>
 
 
                                     <div className='infos-img-card-product'>
                                         <div className='infos-card-product'>
                                             <h1>{produto.nome}</h1>
-                                            <span><span className='span-rs'>R$</span>{parseFloat(produto.preco).toFixed(2)}</span>                                        
+                                            <span><span className='span-rs'>R$</span>{parseFloat(produto.preco).toFixed(2)}</span>
                                         </div>
 
                                         <div className='div-infos-img'>
@@ -61,14 +61,14 @@ const Listaprodutos = ({ termoBusca  }) => {
                         {bebidasFiltradas.map(produto => (
                             <Link to={`/produto/${produto.id}`} state={{ produto }} key={produto.id} className='cards'>
                                 <div className='infos-produtos'>
-                                    <div className='button-add-product'> 
-                                        <button className='add-product'><FontAwesomeIcon icon={faPlus} className='icone-carrinho-add'/></button>
+                                    <div className='button-add-product'>
+                                        <button className='add-product'><FontAwesomeIcon icon={faPlus} className='icone-carrinho-add' /></button>
                                     </div>
 
                                     <div className='infos-img-card-product'>
                                         <div className='infos-card-product'>
                                             <h1>{produto.nome}</h1>
-                                            <span><span className='span-rs'>R$</span>{parseFloat(produto.preco).toFixed(2)}</span>                                        
+                                            <span><span className='span-rs'>R$</span>{parseFloat(produto.preco).toFixed(2)}</span>
                                         </div>
 
                                         <div className='div-infos-img'>

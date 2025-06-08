@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../NavBar/Navbar';
 import './carrinho.css';
+import BotaoConfirmarPedido from './BotaoConfirmarPedido';
 import { useCarrinho } from '../../context/CarrinhoContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons'
@@ -19,15 +20,15 @@ const Carrinho = () => {
                 <p className="texto-resumo text-center mb-4">
                     Revise seus produtos antes de finalizar a compra.
                 </p>
-                
-                
+
+
                 {carrinho.length === 0 ? (
-                    
+
                     <>
                         <p className="text-muted">Seu carrinho está vazio.</p>
                         <img src="../public/vector.svg" alt="" className='img-carrinho-vazio' />
                     </>
-                    
+
                 ) : (
                     carrinho.map((produto) => (
                         <div className="card shadow-sm mb-4 border-0 rounded-2" key={produto.id}>
@@ -82,15 +83,13 @@ const Carrinho = () => {
                 {carrinho.length > 0 && (
                     <div className="d-flex justify-content-between align-items-center mt-2 border-top pt-4 flex-column compra-finalizada">
                         <h4 className="fw-bold ">Total: <span>R$</span> {total.toFixed(2)}</h4>
-                        <button className="btn btn-success px-4 py-2 rounded-2 fw-medium btn-compra">
-                            Finalizar Compra
-                        </button>
+                        <BotaoConfirmarPedido />
                     </div>
                 )}
             </div>
-            <BarraInferior/>
+            <BarraInferior />
         </div>
-        
+
     );
 };
 
