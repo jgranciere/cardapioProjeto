@@ -1,0 +1,80 @@
+.admin-dashboard{
+    width: 100%;
+    flex: 1;
+    background-color: rgba(59, 59, 59, 0.041);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-dashboard-header{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    
+}
+
+.admin-dashboard-options-card{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.admin-dashboard-options-card p{
+    color: #333;
+    font-size: 15px;
+    font-weight: 600;
+    
+}
+
+.card-cadastrar-produto, .card-cadastrar-bebida, .card-add-favoritos, .card-remove-favoritos, .card-remove-produto{
+    width: 100%;
+    height: 50px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.icon-add-product{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+}
+
+.icon-dashboard-add{
+    color: rgb(78, 78, 255);
+}
+
+.icon-dashboard-star{
+    color: rgb(217, 255, 0);
+}
+
+.icon-dashboard-star-delete{
+    color: red;
+}
+
+.card-remove-produto{
+    color: red;
+}
+
+.btn-admin-logout{
+    width: 50%;
+    padding: 10px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+

@@ -1,0 +1,63 @@
+.cadastrar-produto-container{
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(59, 59, 59, 0.041);
+}
+
+.cadastrar-produto-form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputs-form-cadastro{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    height: 45px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;    
+}
+
+.btns-cadastrar-produto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+
+.btn-cadastrar-form{
+    width: 50%;
+    padding: 10px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+
+.btn-voltar-form{
+    width: 40%;
+    padding: 5px;
+    background-color: #4d9aff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}

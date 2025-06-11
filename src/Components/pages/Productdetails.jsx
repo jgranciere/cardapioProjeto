@@ -43,6 +43,8 @@ const ProductDetails = () => {
     };
 
     
+
+    
     const comidas = produtos.filter(produto => produto.categoria !== 'bebida');
     const bebidas = produtos.filter(produto => produto.categoria === 'bebida');
 
@@ -92,6 +94,8 @@ const ProductDetails = () => {
                                         <p>{produto.nome}</p>
                                         <p><span className='span-rs'>R$</span>{parseFloat(produto.preco).toFixed(2)}</p>
                                     </div>
+
+                                    
 
                                     <img src={produto.imagemUrl} alt={`Imagem do ${produto.nome}`} />
 
