@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import './CadastrarBebida.css'; 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 
 const CadastrarBebida = () => {
   const [produto, setProduto] = useState({
@@ -61,6 +63,10 @@ const CadastrarBebida = () => {
 
   return (
     <div className='cadastrar-produto-container'>
+      <div className='div-header-admin'>
+        <FontAwesomeIcon icon={faChevronLeft} className='icon-back-div' onClick={() => navigate("/admin/dashboard")} />
+        <img className='img-logo-admin' src=".././public/Yume-logo.svg" alt="" />     
+      </div>
       <h2>Cadastrar Bebida</h2>
       <form onSubmit={handleSubmit} className='cadastrar-produto-form'>
         <input name='nome' value={produto.nome} onChange={handleChange} placeholder='Nome' required className='inputs-form-cadastro'/>
@@ -70,7 +76,6 @@ const CadastrarBebida = () => {
 
         <div className='btns-cadastrar-produto'>
             <button className='btn-cadastrar-form' type='submit'>Cadastrar</button>
-            <button className='btn-voltar-form' type='button' onClick={()=> navigate("/admin/dashboard")}>Voltar</button>
         </div>
         
       </form>

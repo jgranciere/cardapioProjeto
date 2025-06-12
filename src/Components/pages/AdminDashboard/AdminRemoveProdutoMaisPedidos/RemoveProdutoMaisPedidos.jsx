@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './RemoveProdutoMaisPedidos.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 
 const RemoveProdutoMaisPedidos = () => {
   const [produtoId, setProdutoId] = useState('');
@@ -57,6 +59,12 @@ const RemoveProdutoMaisPedidos = () => {
 
   return (
     <div className='cadastrar-produto-container'>
+
+      <div className='div-header-admin'>
+          <FontAwesomeIcon icon={faChevronLeft} className='icon-back-div' onClick={() => navigate("/admin/dashboard")} />
+          <img className='img-logo-admin' src=".././public/Yume-logo.svg" alt="" />     
+      </div>
+
         <h2>Remover Produto dos Mais Pedidos</h2>
         <div className='lista-produtos'>
             <h3>Lista de Produtos</h3>
@@ -95,14 +103,7 @@ const RemoveProdutoMaisPedidos = () => {
             />
 
             <div className='btns-cadastrar-produto'>
-                <button className='btn-cadastrar-form' type='submit'>Remover</button>
-                <button
-                    className='btn-voltar-form'
-                    type='button'
-                    onClick={() => navigate("/admin/dashboard")}
-                >
-                    Voltar
-                </button>
+                <button className='btn-cadastrar-form-remove' type='submit'>Remover</button>
             </div>
         </form>
     </div>

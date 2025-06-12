@@ -42,9 +42,7 @@ const ProductDetails = () => {
         setTimeout(() => setMensagemProdutoId(null), 3000);
     };
 
-    
 
-    
     const comidas = produtos.filter(produto => produto.categoria !== 'bebida');
     const bebidas = produtos.filter(produto => produto.categoria === 'bebida');
 

@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import './CadastrarProduto.css'; 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 
 const CadastrarProduto = () => {
   const [produto, setProduto] = useState({
@@ -43,8 +45,10 @@ const CadastrarProduto = () => {
         body: formData
       });
 
+      const mensagem = await response.json();
+
       if(response.ok) {
-        alert('Produto cadastrado com sucesso!');
+        alert(`${mensagem.mensagemSucesso}`);
         setProduto({
           nome: '',
           preco: '',
@@ -52,7 +56,7 @@ const CadastrarProduto = () => {
         });
         setImagem(null);
       } else {
-        alert('Erro ao cadastrar produto. Verifique os dados e tente novamente.');
+        alert(`${mensagem.mensagemErro}`);
       }
     } catch (error) {
       alert('Erro ao cadastrar produto: ' + error.message);
@@ -61,16 +65,20 @@ const CadastrarProduto = () => {
 
   return (
     <div className='cadastrar-produto-container'>
+
+      <div className='div-header-admin'>
+        <FontAwesomeIcon icon={faChevronLeft} className='icon-back-div' onClick={() => navigate("/admin/dashboard")} />
+        <img className='img-logo-admin' src=".././public/Yume-logo.svg" alt="" />     
+      </div>
       <h2>Cadastrar produto</h2>
       <form onSubmit={handleSubmit} className='cadastrar-produto-form'>
         <input name='nome' value={produto.nome} onChange={handleChange} placeholder='Nome' required className='inputs-form-cadastro'/>
         <input name='preco' value={produto.preco} onChange={handleChange} placeholder='Preço' required className='inputs-form-cadastro'/>
         <textarea name='descricao' value={produto.descricao} onChange={handleChange} placeholder='Descrição' required className='inputs-form-cadastro'/>
         <input name='foto' type='file' accept='image/*' value={produto.imagemUrl} onChange={handleImagemChange} placeholder='Imagem' required className='inputs-form-cadastro'/>
-
+        
         <div className='btns-cadastrar-produto'>
             <button className='btn-cadastrar-form' type='submit'>Cadastrar</button>
-            <button className='btn-voltar-form' type='button' onClick={()=> navigate("/admin/dashboard")}>Voltar</button>
         </div>
         
       </form>

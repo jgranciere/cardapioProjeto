@@ -57,13 +57,13 @@
 }
 
 .infos-produtos h1{
-    font-size: 18px;
+    font-size: 13px;
     font-weight: 500;
 }
 
 .infos-produtos span{
-    font-size: 15px;
-    font-weight: 600;
+    font-size: 13px;
+    font-weight: 200;
 }
 
 .infos-produtos img{
@@ -113,9 +113,10 @@
 }
 
 .infos-card-product .span-rs{
-    font-size: 12px;
+    font-size: 10px;
     margin-right: 5px;
     color: rgba(0, 0, 0, 0.589);
+    font-weight: 500;
 }
 
 .infos-card-product{

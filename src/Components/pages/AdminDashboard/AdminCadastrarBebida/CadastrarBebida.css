@@ -48,16 +48,3 @@
     justify-content: center;
     margin: 5px;
 }
-
-.btn-voltar-form{
-    width: 40%;
-    padding: 5px;
-    background-color: #4d9aff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 5px;
-}
