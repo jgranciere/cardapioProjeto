@@ -65,7 +65,7 @@ const AddFavoritos = () => {
       
       <h2>Adicionar aos Favoritos</h2>
       <div className='lista-produtos'>
-          <h3>Lista de Produtos</h3>
+        <h3>Lista de Produtos</h3>
           <div className='tabela-wrapper'>
               <table className='tabela-produtos'>
                   <thead>

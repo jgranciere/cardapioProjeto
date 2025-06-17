@@ -14,6 +14,7 @@ import CadastrarBebida from './Components/pages/AdminDashboard/AdminCadastrarBeb
 import AddFavoritos from './Components/pages/AdminDashboard/AdminAddFavoritos/AddFavoritos'
 import RemoveProduto from './Components/pages/AdminDashboard/AdminRemoveProduto/RemoveProduto'
 import RemoveProdutoMaisPedidos from './Components/pages/AdminDashboard/AdminRemoveProdutoMaisPedidos/RemoveProdutoMaisPedidos'
+import EditProduto from './Components/pages/AdminDashboard/AdminEditProduto/EditProduto'
 
 
 const App = () => {
@@ -53,6 +54,11 @@ const App = () => {
             <Route path="/admin/addfavoritos" element={
               <ProtectedRoute>
                 <AddFavoritos />
+              </ProtectedRoute>
+            } />
+            <Route path="/admin/editproduto" element={
+              <ProtectedRoute>
+                <EditProduto />
               </ProtectedRoute>
             } />
             <Route path="/admin/removeproduto" element={

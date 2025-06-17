@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: center;
     background-color: white;
-    padding-top: 70px;
+    padding-top: 80px;
 }
 
 .cadastrar-produto-container h2{
@@ -53,7 +53,7 @@
     width: 90%;
     padding: 10px;
     background-color: rgb(116, 255, 73);
-    color: rgb(0, 0, 0);
+    color: #fff;
     border: none;
     border-radius: 15px;
     display: flex;
