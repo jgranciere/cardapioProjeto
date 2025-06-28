@@ -1,41 +1,50 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import "./BotaoConfirmarPedido.css";
 
-export default function BotaoConfirmarPedido() {
-  const [animado, setAnimado] = useState(false);
+
+const BotaoAnimado = () => {
+  const [status, setStatus] = useState(''); 
+
+  useEffect(() => {
+    let validateTimeout, resetTimeout;
+
+    if (status === 'onclic') {
+      validateTimeout = setTimeout(() => {
+        setStatus('validate');
+      }, 2250);
+    }
+
+    if (status === 'validate') {
+      resetTimeout = setTimeout(() => {
+        setStatus('');
+      }, 1250);
+    }
+
+    return () => {
+      clearTimeout(validateTimeout);
+      clearTimeout(resetTimeout);
+    };
+  }, [status]);
 
   const handleClick = () => {
-    if (!animado) {
-      setAnimado(true);
+    if (status === '') {
+      setStatus('onclic');
     }
   };
 
-  useEffect(() => {
-    if (animado) {
-      const timeout = setTimeout(() => setAnimado(false), 10000);
-      return () => clearTimeout(timeout);
-    }
-  }, [animado]);
-
   return (
-    <button className={`order ${animado ? "animate" : ""}`} onClick={handleClick}>
-      <span className="default">Confirmar Pedido</span>
-      <span className="success">
-        Pedido Confirmado
-        <svg viewBox="0 0 12 10">
-          <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-        </svg>
-      </span>
-      <div className="box" />
-      <div className="truck">
-        <div className="back" />
-        <div className="front">
-          <div className="window" />
-        </div>
-        <div className="light top" />
-        <div className="light bottom" />
-      </div>
-      <div className="lines" />
-    </button>
+    <div className="container-btn-confirmar">
+      <button
+        id="button"
+        className={status}
+        onClick={handleClick}
+      >
+        {status === '' && 'SUBMIT'}
+        {status === 'onclic' && ''}
+        {status === 'validate' && <span>&#10003;</span>}
+      </button>
+    </div>
   );
-}
+};
+
+export default BotaoAnimado;
