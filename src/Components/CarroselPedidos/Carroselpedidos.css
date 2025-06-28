@@ -34,9 +34,8 @@
 
 .info-produto p{
   font-size: 12px;
-  font-weight: 400;
+  font-weight: bold;
   color: #000;
-  letter-spacing: 2px;
 }
 
 .info-produto span{

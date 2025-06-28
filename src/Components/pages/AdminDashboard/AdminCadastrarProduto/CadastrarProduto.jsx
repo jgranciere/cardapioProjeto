@@ -5,38 +5,26 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 
 const CadastrarProduto = () => {
-  const [produto, setProduto] = useState({
-    nome: '',
-    preco: '',
-    descricao: '', 
-  });
-
-  const [imagem, setImagem] = useState(null)
-
-  const handleChange = (e) => {
-    setProduto({
-      ...produto,
-      [e.target.name]: e.target.value
-    });
-  }
-
-  const handleImagemChange = (e) => {
-    setImagem(e.target.files[0]);
-  }
+  const [nome, setNome] = useState('');
+  const [preco, setPreco] = useState('');
+  const [descricao, setDescricao] = useState('');
+  const [foto, setFoto] = useState(null);
 
   const navigate = useNavigate();
-  
+
+  const handleImagemChange = (e) => {
+    setFoto(e.target.files[0]);
+  }
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const token = localStorage.getItem('token');
-
     const formData = new FormData();
-    formData.append('nome', produto.nome);
-    formData.append('preco', produto.preco);
-    formData.append('descricao', produto.descricao);
-    formData.append('foto', imagem)
+    formData.append('nome', nome);
+    formData.append('preco', preco);
+    formData.append('descricao', descricao);
+    formData.append('foto', foto)
     
 
     try {
@@ -49,12 +37,10 @@ const CadastrarProduto = () => {
 
       if(response.ok) {
         alert(`${mensagem.mensagemSucesso}`);
-        setProduto({
-          nome: '',
-          preco: '',
-          descricao: ''
-        });
-        setImagem(null);
+        setNome('');
+        setPreco('');
+        setDescricao('');
+        setFoto(null);
       } else {
         alert(`${mensagem.mensagemErro}`);
       }
@@ -72,10 +58,10 @@ const CadastrarProduto = () => {
       </div>
       <h2>Cadastrar produto</h2>
       <form onSubmit={handleSubmit} className='cadastrar-produto-form'>
-        <input name='nome' value={produto.nome} onChange={handleChange} placeholder='Nome' required className='inputs-form-cadastro'/>
-        <input name='preco' value={produto.preco} onChange={handleChange} placeholder='Preço' required className='inputs-form-cadastro'/>
-        <textarea name='descricao' value={produto.descricao} onChange={handleChange} placeholder='Descrição' required className='inputs-form-cadastro'/>
-        <input name='foto' type='file' accept='image/*' value={produto.imagemUrl} onChange={handleImagemChange} placeholder='Imagem' required className='inputs-form-cadastro'/>
+        <input name='nome' value={nome} onChange={(e) => setNome(e.target.value)} placeholder='Nome' required className='inputs-form-cadastro'/>
+        <input name='preco' value={preco} onChange={(e) => setPreco(e.target.value)} placeholder='Preço' required className='inputs-form-cadastro'/>
+        <textarea name='descricao' value={descricao} onChange={(e) => setDescricao(e.target.value)} placeholder='Descrição' required className='inputs-form-cadastro'/>
+        <input name='foto' type='file' accept='image/*' onChange={handleImagemChange} placeholder='Imagem' required className='inputs-form-cadastro'/>
         
         <div className='btns-cadastrar-produto'>
             <button className='btn-cadastrar-form' type='submit'>Cadastrar</button>
